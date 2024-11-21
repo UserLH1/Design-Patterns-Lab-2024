@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatternslab2024;
+package ro.uvt.info.designpatternslab2024.bookmodel;
 
 public interface Element {
     void add(Element element);

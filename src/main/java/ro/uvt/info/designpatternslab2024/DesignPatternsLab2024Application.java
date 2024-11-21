@@ -1,7 +1,9 @@
 package ro.uvt.info.designpatternslab2024;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import ro.uvt.info.designpatternslab2024.bookmodel.*;
+import ro.uvt.info.designpatternslab2024.strategy.AlignLeft;
+import ro.uvt.info.designpatternslab2024.strategy.AlignRight;
 
 @SpringBootApplication
 public class DesignPatternsLab2024Application {
@@ -18,10 +20,13 @@ public class DesignPatternsLab2024Application {
 
         noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
         noapteBuna.addContent(cap1);
+        Paragraph p1=new Paragraph("Text from subchapter 1.1");
+
+        p1.setAlignStrategy(new AlignRight());
 
         cap1.add(new Paragraph("Moto capitol"));
         cap1.add(cap11);
-        cap11.add(new Paragraph("Text from subchapter 1.1"));
+        cap11.add(p1);
         cap11.add(cap111);
         cap111.add(new Paragraph("Text from subchapter 1.1.1"));
         cap111.add(cap1111);

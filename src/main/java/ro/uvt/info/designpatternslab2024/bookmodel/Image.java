@@ -1,4 +1,6 @@
-package ro.uvt.info.designpatternslab2024;
+package ro.uvt.info.designpatternslab2024.bookmodel;
+
+import ro.uvt.info.designpatternslab2024.bookmodel.Element;
 
 public class Image implements Element {
     private String imageName;
