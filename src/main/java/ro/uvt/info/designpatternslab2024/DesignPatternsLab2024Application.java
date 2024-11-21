@@ -1,38 +1,56 @@
 package ro.uvt.info.designpatternslab2024;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.ApplicationContext;
 import ro.uvt.info.designpatternslab2024.bookmodel.*;
+import ro.uvt.info.designpatternslab2024.dependencyInjection.components.ClientComponent;
+import ro.uvt.info.designpatternslab2024.dependencyInjection.components.SingletonComponent;
+import ro.uvt.info.designpatternslab2024.dependencyInjection.components.TransientComponent;
 import ro.uvt.info.designpatternslab2024.strategy.AlignLeft;
 import ro.uvt.info.designpatternslab2024.strategy.AlignRight;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class DesignPatternsLab2024Application {
 
     public static void main(String[] args) {
-        //SpringApplication.run(DesignPatternsLab2024Application.class, args);
-        Book noapteBuna = new Book("Noapte buna, copii!");
-        Author rpGheo = new Author("Radu Pavel Gheo");
-        noapteBuna.addAuthor(rpGheo);
-        Section cap1 = new Section("Capitolul 1");
-        Section cap11 = new Section("Capitolul 1.1");
-        Section cap111 = new Section("Capitolul 1.1.1");
-        Section cap1111 = new Section("Capitolul 1.1.1.1");
+        ApplicationContext context = SpringApplication.run(DesignPatternsLab2024Application.class, args);
 
-        noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
-        noapteBuna.addContent(cap1);
-        Paragraph p1=new Paragraph("Text from subchapter 1.1");
+        TransientComponent transientBean = context.getBean(TransientComponent.class);
+        transientBean.operation();
 
-        p1.setAlignStrategy(new AlignRight());
+        transientBean = context.getBean(TransientComponent.class);
+        transientBean.operation();
 
-        cap1.add(new Paragraph("Moto capitol"));
-        cap1.add(cap11);
-        cap11.add(p1);
-        cap11.add(cap111);
-        cap111.add(new Paragraph("Text from subchapter 1.1.1"));
-        cap111.add(cap1111);
-        cap1111.add(new Image("Image subchapter 1.1.1.1"));
+        SingletonComponent singletonBean = context.getBean(SingletonComponent.class);
+        singletonBean.operation();
 
-        noapteBuna.print();
+        ClientComponent clientBean = context.getBean(ClientComponent.class);
+        clientBean.operation();
+//        Book noapteBuna = new Book("Noapte buna, copii!");
+//        Author rpGheo = new Author("Radu Pavel Gheo");
+//        noapteBuna.addAuthor(rpGheo);
+//        Section cap1 = new Section("Capitolul 1");
+//        Section cap11 = new Section("Capitolul 1.1");
+//        Section cap111 = new Section("Capitolul 1.1.1");
+//        Section cap1111 = new Section("Capitolul 1.1.1.1");
+//
+//        noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
+//        noapteBuna.addContent(cap1);
+//        Paragraph p1=new Paragraph("Text from subchapter 1.1");
+//
+//        p1.setAlignStrategy(new AlignRight());
+//
+//        cap1.add(new Paragraph("Moto capitol"));
+//        cap1.add(cap11);
+//        cap11.add(p1);
+//        cap11.add(cap111);
+//        cap111.add(new Paragraph("Text from subchapter 1.1.1"));
+//        cap111.add(cap1111);
+//        cap1111.add(new Image("Image subchapter 1.1.1.1"));
+//
+//        noapteBuna.print();
     }
 
 }
