@@ -32,4 +32,7 @@ public class Book {
             element.print();
         }
     }
+
+    public Integer getId() {
+    }
 }
