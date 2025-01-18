@@ -20,6 +20,9 @@ public class Author {
    @Column(nullable = false)
     private String name;
 
+    public Author(String erichGamma) {
+    }
+
 
     public void print()
     {

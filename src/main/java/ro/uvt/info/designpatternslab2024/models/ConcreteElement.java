@@ -3,8 +3,7 @@ package ro.uvt.info.designpatternslab2024.models;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class ConcreteElement implements Element {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

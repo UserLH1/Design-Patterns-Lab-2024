@@ -1,4 +1,7 @@
 package ro.uvt.info.designpatternslab2024.observer;
 
-public class Observer {
+import ro.uvt.info.designpatternslab2024.models.Book;
+
+public interface Observer {
+    void update(Book book);
 }

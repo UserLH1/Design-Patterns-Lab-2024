@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Books</title>
 </head>
 <body>
+<h1>All Books</h1>
+<a href="javascript:void(0)" onclick="sendRequest()">Fetch Books</a>
+<table id="booksTable" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
+<script>
+    function sendRequest() {
+        if (typeof(EventSource) !== "undefined") {
+            const source = new EventSource("http://localhost:8080/books-sse");
+
+            console.log("Connected to SSE...");
+
+            source.onmessage = function(event) {
+                console.log("Received event: ", event);
+                try {
+                    const data = JSON.parse(event.data);
+                    console.log("Parsed data: ", data);
+
+                    // Afișează cartea în tabel
+                    const table = document.getElementById("booksTable").getElementsByTagName("tbody")[0];
+                    const row = table.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+
+                    cell1.innerHTML = data.id;
+                    cell2.innerHTML = data.title;
+                } catch (error) {
+                    console.error("Error parsing event data: ", error);
+                }
+            };
+
+            source.onerror = function(error) {
+                console.error("Error with SSE connection: ", error);
+            };
+        } else {
+            console.error("Your browser does not support server-sent events.");
+        }
+    }
+
+</script>
 </body>
 </html>
