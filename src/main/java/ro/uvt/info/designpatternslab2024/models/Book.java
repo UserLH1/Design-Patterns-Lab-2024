@@ -1,17 +1,19 @@
 package ro.uvt.info.designpatternslab2024.models;
+
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "books")
-@Data //metode de getter si setter din lombok
-
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,20 +22,28 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-    @OneToMany
-    private List<Element> elements = new ArrayList<>();
-
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "book_authors",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id")
+    )
     private List<Author> authors = new ArrayList<>();
 
-    public Book(String title)
-    {
-        this.title=title;
-    }
-    public void addAuthor(Author authors)
-    {
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "book_id")
+    private List<ConcreteElement> elements = new ArrayList<>();
 
-        this.authors.add(authors);
+    public Book(String title) {
+        this.title = title;
+    }
+
+    public void addAuthor(Author author) {
+        this.authors.add(author);
+    }
+
+    public void addElement(ConcreteElement element) {
+        this.elements.add(element);
     }
 
     public void print() {
@@ -42,8 +52,8 @@ public class Book {
         for (Author author : authors) {
             author.print();
         }
-        for (Element element : elements) {
-            System.out.println("Element:");
+        System.out.println("Elements:");
+        for (ConcreteElement element : elements) {
             element.print();
         }
     }

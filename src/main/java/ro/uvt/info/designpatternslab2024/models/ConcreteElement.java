@@ -2,7 +2,7 @@ package ro.uvt.info.designpatternslab2024.models;
 
 import jakarta.persistence.*;
 
-@MappedSuperclass
+@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 public abstract class ConcreteElement implements Element {

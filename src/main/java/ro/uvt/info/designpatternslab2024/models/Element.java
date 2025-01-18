@@ -2,7 +2,6 @@ package ro.uvt.info.designpatternslab2024.models;
 
 import jakarta.persistence.Entity;
 
-@Entity
 
 public interface Element {
     void add(Element element);

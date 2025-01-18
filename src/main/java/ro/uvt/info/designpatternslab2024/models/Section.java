@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Section implements Element {
+public class Section extends ConcreteElement {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,11 +22,11 @@ public class Section implements Element {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "section_id")
-    private List<Element> elements = new ArrayList<>();
+    private List<ConcreteElement> elements = new ArrayList<>();
 
 
-    @Override
-    public void add(Element element) {
+
+    public void add(ConcreteElement element) {
         elements.add(element);
     }
 

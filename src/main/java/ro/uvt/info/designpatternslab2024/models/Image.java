@@ -1,24 +1,23 @@
 package ro.uvt.info.designpatternslab2024.models;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class Image implements Element {
-    private String imageName;
+@Entity
+@DiscriminatorValue("Image")
+@Data
+@NoArgsConstructor
+public class Image extends ConcreteElement {
 
-    public Image(String imageName) {
-        this.imageName = imageName;
-    }
+    @Column(nullable = false)
+    private String url;
 
-    @Override
-    public void add(Element element) {
-        throw new UnsupportedOperationException("Cannot add elements to an Image.");
-    }
-
-    @Override
-    public void remove(Element element) {
-        throw new UnsupportedOperationException("Cannot remove elements from an Image.");
+    public Image(String url) {
+        this.url = url;
     }
 
     @Override
     public void print() {
-        System.out.println("Image: " + imageName);
+        System.out.println("Image: " + url);
     }
 }

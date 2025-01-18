@@ -1,24 +1,24 @@
 package ro.uvt.info.designpatternslab2024.models;
 
-public class Table implements Element {
-    private String title;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    public Table(String title) {
-        this.title = title;
-    }
+@Entity
+@DiscriminatorValue("Table")
+@Data
+@NoArgsConstructor
+public class Table extends ConcreteElement {
 
-    @Override
-    public void add(Element element) {
-        throw new UnsupportedOperationException("Cannot add elements to a Table.");
-    }
+    @Column(nullable = false)
+    private String content;
 
-    @Override
-    public void remove(Element element) {
-        throw new UnsupportedOperationException("Cannot remove elements from a Table.");
+    public Table(String content) {
+        this.content = content;
     }
 
     @Override
     public void print() {
-        System.out.println("Table: " + title);
+        System.out.println("Table: " + content);
     }
 }

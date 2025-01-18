@@ -1,12 +1,19 @@
 package ro.uvt.info.designpatternslab2024.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ro.uvt.info.designpatternslab2024.strategies.AlignStrategy;
-@Getter
-@Setter
-public class Paragraph implements Element {
+
+@Entity
+@DiscriminatorValue("Paragraph")
+@Data
+@NoArgsConstructor
+public class Paragraph extends ConcreteElement {
+    @Column(nullable = false)
     private String text;
+
+    @Transient
     private AlignStrategy alignStrategy;
 
     public Paragraph(String text) {
@@ -14,25 +21,11 @@ public class Paragraph implements Element {
     }
 
     @Override
-    public void add(Element element) {
-        throw new UnsupportedOperationException("Cannot add elements to a Paragraph.");
-    }
-
-    @Override
-    public void remove(Element element) {
-        throw new UnsupportedOperationException("Cannot remove elements from a Paragraph.");
-    }
-
-    @Override
     public void print() {
-
         if (alignStrategy != null) {
             System.out.println("Paragraph: " + alignStrategy.render(text));
-        }
-        else {
+        } else {
             System.out.println("Paragraph: " + text);
         }
-
     }
-
 }
