@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Table extends ConcreteElement {
+public class DataTable extends ConcreteElement {
 
     @Column(nullable = false)
     private String content;
 
-    public Table(String content) {
+    public DataTable(String content) {
         this.content = content;
     }
 

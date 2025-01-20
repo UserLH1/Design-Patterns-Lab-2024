@@ -6,8 +6,9 @@ const BooksPage = () => {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingBook, setEditingBook] = useState(null);
-  const [formData, setFormData] = useState({ title: "", author: "" });
+  const [formData, setFormData] = useState({ title: "", authors: [] });
   const SERVER_API = "http://localhost:8080";
+
   // Fetch books on component mount
   useEffect(() => {
     fetchBooks();
@@ -16,15 +17,29 @@ const BooksPage = () => {
   const fetchBooks = async () => {
     try {
       const response = await axios.get(SERVER_API + "/books");
+      console.log("Fetched books:", response.data);
       setBooks(response.data);
     } catch (error) {
       console.error("Error fetching books:", error);
     }
   };
 
+  const handleFetchBookSSE = () => {
+    const eventSource = new EventSource(SERVER_API + "/books-sse");
+    console.log("Listening for book events...");
+    eventSource.onmessage = (event) => {
+      const newBook = JSON.parse(event.data);
+      setBooks((prevBooks) => [...prevBooks, newBook]);
+    };
+    eventSource.onerror = () => {
+      console.error("Error with SSE connection");
+      eventSource.close();
+    };
+  };
+
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/books/${id}`);
+      await axios.delete(SERVER_API + `/books/${id}`);
       fetchBooks(); // Refresh the list
     } catch (error) {
       console.error("Error deleting book:", error);
@@ -33,12 +48,17 @@ const BooksPage = () => {
 
   const handleSave = async () => {
     try {
+      const formattedData = {
+        ...formData,
+        authors: formData.authors.map((name) => ({ name })), // Transformă array-ul de stringuri în obiecte
+      };
+
       if (editingBook) {
         // Edit book
-        await axios.put(`/books/${editingBook.id}`, formData);
+        await axios.put(SERVER_API + `/books/${editingBook.id}`, formattedData);
       } else {
         // Add new book
-        await axios.post("/books", formData);
+        await axios.post(SERVER_API + "/books", formattedData);
       }
       setShowModal(false);
       fetchBooks();
@@ -51,8 +71,11 @@ const BooksPage = () => {
     setEditingBook(book);
     setFormData(
       book
-        ? { title: book.title, author: book.author }
-        : { title: "", author: "" }
+        ? {
+            title: book.title,
+            authors: book.authors.map((author) => author.name), // Extrage doar numele autorilor
+          }
+        : { title: "", authors: [] }
     );
     setShowModal(true);
   };
@@ -60,15 +83,25 @@ const BooksPage = () => {
   return (
     <div className="container mt-4">
       <h1>Books Management</h1>
-      <Button className="mb-3" onClick={() => openModal()}>
+      <Button
+        style={{ marginRight: "10px" }}
+        className="mb-3"
+        onClick={() => openModal()}
+      >
         Add Book
+      </Button>
+      <Button className="mb-3" onClick={fetchBooks}>
+        Refresh Books
+      </Button>
+      <Button className="mb-3 ms-2" onClick={handleFetchBookSSE}>
+        Start Listening (SSE)
       </Button>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Author</th>
+            <th>Authors</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -77,7 +110,7 @@ const BooksPage = () => {
             <tr key={book.id}>
               <td>{book.id}</td>
               <td>{book.title}</td>
-              <td>{book.author}</td>
+              <td>{book.authors.map((author) => author.name).join(", ")}</td>
               <td>
                 <Button
                   variant="info"
@@ -116,13 +149,18 @@ const BooksPage = () => {
                 }
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Author</Form.Label>
+            <Form.Group className="mt-3">
+              <Form.Label>Authors (comma separated)</Form.Label>
               <Form.Control
                 type="text"
-                value={formData.author}
+                value={formData.authors.join(", ")}
                 onChange={(e) =>
-                  setFormData({ ...formData, author: e.target.value })
+                  setFormData({
+                    ...formData,
+                    authors: e.target.value
+                      .split(",")
+                      .map((name) => name.trim()),
+                  })
                 }
               />
             </Form.Group>
