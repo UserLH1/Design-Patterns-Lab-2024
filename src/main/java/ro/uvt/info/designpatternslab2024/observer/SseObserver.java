@@ -15,13 +15,20 @@ public class SseObserver implements Observer {
 
     @Override
     public void update(Book book) {
+        System.out.println("update method called");
         try {
             emitter.send(book, MediaType.APPLICATION_JSON);
+            System.out.println("Emmiter sent this:" + MediaType.APPLICATION_JSON);
             System.out.println("Sent book to observer: " + book.getTitle());
+        } catch (IllegalStateException e) {
+            System.err.println("SSE connection is no longer valid.");
         } catch (IOException e) {
             emitter.completeWithError(e);
             System.err.println("Error sending SSE: " + e.getMessage());
         }
+        System.out.println("update method finished for book: " + book.getTitle());
+
     }
+
 
 }

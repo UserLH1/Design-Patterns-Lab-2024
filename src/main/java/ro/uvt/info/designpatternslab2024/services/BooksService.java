@@ -13,10 +13,11 @@ import java.util.Optional;
 public class BooksService {
 
     private final BooksRepository booksRepository;
-    private final AllBooksSubject allBooksSubject = new AllBooksSubject();
+    private final AllBooksSubject allBooksSubject;
 
-    public BooksService(BooksRepository booksRepository) {
+    public BooksService(BooksRepository booksRepository, AllBooksSubject allBooksSubject) {
         this.booksRepository = booksRepository;
+        this.allBooksSubject = allBooksSubject;
     }
 
     public List<Book> getAllBooks() {
@@ -41,7 +42,7 @@ public class BooksService {
             book.setAuthors(updatedBook.getAuthors());
             book.setElements(updatedBook.getElements());
             booksRepository.save(book);
-            allBooksSubject.notifyObservers(book); // Notificăm observatorii despre actualizare
+            allBooksSubject.notifyObservers(book);
             System.out.println("Book updated: " + book.getTitle());
         } else {
             System.out.println("Invalid book ID");
@@ -56,7 +57,6 @@ public class BooksService {
             System.out.println("Invalid book ID");
         }
     }
-
 
     public Subject getAllBooksSubject() {
         return allBooksSubject;

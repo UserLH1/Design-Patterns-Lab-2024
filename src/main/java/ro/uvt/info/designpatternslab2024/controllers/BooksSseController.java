@@ -8,21 +8,30 @@ import ro.uvt.info.designpatternslab2024.observer.SseObserver;
 
 @RestController
 public class BooksSseController {
-    private final AllBooksSubject allBooksSubject = new AllBooksSubject();
+    private final AllBooksSubject allBooksSubject;
+
+    public BooksSseController(AllBooksSubject allBooksSubject) {
+        this.allBooksSubject = allBooksSubject;
+    }
 
     @GetMapping("/books-sse")
     public SseEmitter getBooksSse() {
-        SseEmitter emitter = new SseEmitter(0L);
+        SseEmitter emitter = new SseEmitter(60_000L);
+        SseObserver sseObserver = new SseObserver(emitter);
 
-        allBooksSubject.attach(new SseObserver(emitter));
+        allBooksSubject.attach(sseObserver);
         System.out.println("Observer attached.");
-        emitter.onCompletion(() -> allBooksSubject.detach(new SseObserver(emitter)));
-        emitter.onTimeout(() -> allBooksSubject.detach(new SseObserver(emitter)));
+
+        emitter.onCompletion(() -> {
+            allBooksSubject.detach(sseObserver);
+            System.out.println("SSE connection completed.");
+        });
+
+        emitter.onTimeout(() -> {
+            allBooksSubject.detach(sseObserver);
+            System.out.println("SSE connection timed out.");
+        });
 
         return emitter;
-    }
-
-    public AllBooksSubject getAllBooksSubject() {
-        return allBooksSubject;
     }
 }

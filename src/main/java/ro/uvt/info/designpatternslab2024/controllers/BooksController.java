@@ -27,6 +27,7 @@ public class BooksController {
     @PostMapping
     public ResponseEntity<String> createBook(@RequestBody Book book) {
         booksService.addBook(book);
+        System.out.println("Book subject" + booksService.getAllBooksSubject() );
         booksService.getAllBooksSubject().notifyObservers(book);
         System.out.println("book added");
         return ResponseEntity.ok("Book created: " + book.getTitle());
