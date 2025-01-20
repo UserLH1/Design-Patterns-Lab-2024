@@ -14,22 +14,23 @@ import ro.uvt.info.designpatternslab2024.persistence.BooksRepository;
 
 import java.util.List;
 import java.util.Optional;
+import ro.uvt.info.designpatternslab2024.persistence.BookRepositoryAdapter;
 
 @Service
 public class BooksService {
 
-    private final BooksRepository booksRepository;
+    private final BookRepositoryAdapter bookAdapter;
     private final AllBooksSubject allBooksSubject;
     private final AuthorsRepository authorsRepository; // Adăugat
 
-    public BooksService(BooksRepository booksRepository, AllBooksSubject allBooksSubject,  AuthorsRepository authorsRepository) {
-        this.booksRepository = booksRepository;
+    public BooksService(BookRepositoryAdapter bookAdapter, AllBooksSubject allBooksSubject,  AuthorsRepository authorsRepository) {
+        this.bookAdapter = bookAdapter;
         this.allBooksSubject = allBooksSubject;
         this.authorsRepository = authorsRepository;
     }
 
     public List<Book> getAllBooks() {
-        return booksRepository.findAll();
+        return bookAdapter.findAll();
     }
 
     @Transactional
@@ -49,7 +50,7 @@ public class BooksService {
         }
 
         // Salvează cartea
-        booksRepository.save(book);
+        bookAdapter.save(book);
 
         // Notifică observatorii
         allBooksSubject.notifyObservers(book);
@@ -73,12 +74,12 @@ public class BooksService {
 
 
     public Optional<Book> getBookById(Long id) {
-        return booksRepository.findById(id);
+        return bookAdapter.findById(id);
     }
 
     @Transactional
     public void updateBook(Long id, Book updatedBook) {
-        Optional<Book> existingBookOpt = booksRepository.findById(id);
+        Optional<Book> existingBookOpt = bookAdapter.findById(id);
         if (existingBookOpt.isPresent()) {
             Book existingBook = existingBookOpt.get();
 
@@ -94,7 +95,7 @@ public class BooksService {
             existingBook.getElements().addAll(updatedBook.getElements());
 
             // Salvează modificările
-            booksRepository.save(existingBook);
+            bookAdapter.save(existingBook);
         } else {
             throw new EntityNotFoundException("Book not found with ID: " + id);
         }
@@ -102,8 +103,8 @@ public class BooksService {
 
 
     public void deleteBook(Long id) {
-        if (booksRepository.existsById(id)) {
-            booksRepository.deleteById(id);
+        if (bookAdapter.existsById(id)) {
+            bookAdapter.deleteById(id);
             System.out.println("Book deleted with ID: " + id);
         } else {
             System.out.println("Invalid book ID");
