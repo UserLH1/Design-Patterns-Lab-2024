@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@DiscriminatorValue("Table")
 @Data
 @NoArgsConstructor
 public class Table extends ConcreteElement {

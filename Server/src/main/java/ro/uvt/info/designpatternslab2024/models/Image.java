@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@DiscriminatorValue("Image")
 @Data
 @NoArgsConstructor
 public class Image extends ConcreteElement {

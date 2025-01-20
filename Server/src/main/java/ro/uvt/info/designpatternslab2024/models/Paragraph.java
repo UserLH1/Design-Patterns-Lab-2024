@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import ro.uvt.info.designpatternslab2024.strategies.AlignStrategy;
 
 @Entity
-@DiscriminatorValue("Paragraph")
 @Data
 @NoArgsConstructor
 public class Paragraph extends ConcreteElement {

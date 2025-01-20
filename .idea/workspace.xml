@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdebeb15-0818-4a8e-bc2f-ad560d9c0f82" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/commands/CreateBookCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/commands/DeleteBookCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/commands/UpdateBookCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/components/SingletonComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/components/TransientComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/controllers/BooksController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/controllers/BooksSseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/filters/Filter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/filters/RequestLoggingFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/ConcreteElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Element.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Paragraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Section.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/models/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/observer/AllBooksSubject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/observer/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/observer/SseObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/observer/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/persistence/AuthorsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/persistence/BooksRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/persistence/CrudRepositoryAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/BooksService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/ClientComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/LoggingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/ParagraphAlignmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/ParagraphAlignmentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignLeft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignRight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024ApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oVntAzVmQ6qaVdrbmJNkKhB64G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.Build SP.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DesignPatternsLab2024Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My Files/Facultate/SP&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SP" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesignPatternsLab2024Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ro.uvt.info.designpatternslab2024.DesignPatternsLab2024Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdebeb15-0818-4a8e-bc2f-ad560d9c0f82" name="Changes" comment="" />
+      <created>1730963823090</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730963823090</updated>
+      <workItem from="1730963824159" duration="1216000" />
+      <workItem from="1730965051059" duration="3764000" />
+      <workItem from="1732094911885" duration="7000" />
+      <workItem from="1732194242088" duration="10000" />
+      <workItem from="1732254837949" duration="5561000" />
+      <workItem from="1732694038788" duration="3000" />
+      <workItem from="1736405518940" duration="4000" />
+      <workItem from="1737100682243" duration="5933000" />
+      <workItem from="1737193383980" duration="689000" />
+      <workItem from="1737194108625" duration="14005000" />
+      <workItem from="1737213381660" duration="5859000" />
+      <workItem from="1737225765800" duration="5457000" />
+      <workItem from="1737355752840" duration="2351000" />
+      <workItem from="1737359094875" duration="5075000" />
+      <workItem from="1737364185048" duration="2414000" />
+      <workItem from="1737367140763" duration="23000" />
+      <workItem from="1737367380008" duration="34000" />
+      <workItem from="1737367423369" duration="52000" />
+      <workItem from="1737367484447" duration="124000" />
+      <workItem from="1737367625941" duration="223000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
