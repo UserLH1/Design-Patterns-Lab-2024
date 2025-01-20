@@ -5,6 +5,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import ro.uvt.info.designpatternslab2024.models.Author;
 import ro.uvt.info.designpatternslab2024.models.Book;
+import ro.uvt.info.designpatternslab2024.models.Element;
+import ro.uvt.info.designpatternslab2024.models.Section;
 import ro.uvt.info.designpatternslab2024.observer.AllBooksSubject;
 import ro.uvt.info.designpatternslab2024.observer.Subject;
 import ro.uvt.info.designpatternslab2024.persistence.AuthorsRepository;
@@ -30,18 +32,40 @@ public class BooksService {
         return booksRepository.findAll();
     }
 
+    @Transactional
     public void addBook(Book book) {
-        // Salvează autorii înainte de a salva cartea
+        // Salvează autorii
         for (Author author : book.getAuthors()) {
             if (author.getId() == null || !authorsRepository.existsById(author.getId())) {
                 authorsRepository.save(author);
             }
         }
 
-        // Salvează cartea și notifică observatorii
+        // Persistă secțiunile și subsecțiunile recursiv
+        for (Section section : book.getSections()) {
+            persistSectionRecursively(section);
+        }
+
+        // Salvează cartea
         booksRepository.save(book);
+
+        // Notifică observatorii
         allBooksSubject.notifyObservers(book);
         System.out.println("Book added: " + book.getTitle());
+    }
+
+    // Metodă recursivă pentru a salva secțiunile și subsecțiunile
+    private void persistSectionRecursively(Section section) {
+        // Persistă elementele din secțiune
+        for (Element element : section.getElements()) {
+            // Adaugă logici suplimentare dacă este necesar
+            System.out.println("Persisting element: " + element.getClass().getSimpleName());
+        }
+
+        // Persistă subsecțiunile recursiv
+        for (Section subSection : section.getSubSections()) {
+            persistSectionRecursively(subSection);
+        }
     }
 
 

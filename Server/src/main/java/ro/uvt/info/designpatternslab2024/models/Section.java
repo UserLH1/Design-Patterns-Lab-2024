@@ -24,6 +24,9 @@ public class Section extends ConcreteElement {
     @JoinColumn(name = "section_id")
     private List<ConcreteElement> elements = new ArrayList<>();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "parent_section_id")
+    private List<Section> subSections = new ArrayList<>();
 
 
     public void add(ConcreteElement element) {

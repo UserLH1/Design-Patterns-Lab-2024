@@ -29,7 +29,15 @@ const BooksPage = () => {
     console.log("Listening for book events...");
     eventSource.onmessage = (event) => {
       const newBook = JSON.parse(event.data);
-      setBooks((prevBooks) => [...prevBooks, newBook]);
+
+      // Verifică dacă cartea deja există în listă
+      setBooks((prevBooks) => {
+        const bookExists = prevBooks.some((book) => book.id === newBook.id);
+        if (!bookExists) {
+          return [...prevBooks, newBook];
+        }
+        return prevBooks;
+      });
     };
     eventSource.onerror = () => {
       console.error("Error with SSE connection");
@@ -123,8 +131,17 @@ const BooksPage = () => {
                   variant="danger"
                   size="sm"
                   onClick={() => handleDelete(book.id)}
+                  style={{ marginLeft: "10px" }}
                 >
                   Delete
+                </Button>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => (window.location.href = `/book/${book.id}`)}
+                  style={{ marginLeft: "10px" }}
+                >
+                  View Book
                 </Button>
               </td>
             </tr>

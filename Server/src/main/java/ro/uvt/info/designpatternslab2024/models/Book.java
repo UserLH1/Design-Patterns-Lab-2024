@@ -1,7 +1,6 @@
 package ro.uvt.info.designpatternslab2024.models;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -22,7 +21,7 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "book_authors",
             joinColumns = @JoinColumn(name = "book_id"),
@@ -30,21 +29,36 @@ public class Book {
     )
     private List<Author> authors = new ArrayList<>();
 
-
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "book_id")
     private List<ConcreteElement> elements = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
+        this.authors = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public void addAuthor(Author author) {
-        this.authors.add(author);
+        if (!this.authors.contains(author)) {
+            this.authors.add(author);
+        }
     }
 
     public void addElement(ConcreteElement element) {
-        this.elements.add(element);
+        if (!this.elements.contains(element)) {
+            this.elements.add(element);
+        }
+    }
+
+    public List<Section> getSections() {
+        List<Section> sections = new ArrayList<>();
+        for (ConcreteElement element : elements) {
+            if (element instanceof Section) {
+                sections.add((Section) element);
+            }
+        }
+        return sections;
     }
 
     public void print() {
