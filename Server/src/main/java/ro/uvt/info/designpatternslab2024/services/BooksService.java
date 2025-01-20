@@ -7,7 +7,7 @@ import ro.uvt.info.designpatternslab2024.models.Author;
 import ro.uvt.info.designpatternslab2024.models.Book;
 import ro.uvt.info.designpatternslab2024.models.Element;
 import ro.uvt.info.designpatternslab2024.models.Section;
-import ro.uvt.info.designpatternslab2024.observer.AllBooksSubject;
+import ro.uvt.info.designpatternslab2024.components.AllBooksSubject;
 import ro.uvt.info.designpatternslab2024.observer.Subject;
 import ro.uvt.info.designpatternslab2024.persistence.AuthorsRepository;
 import ro.uvt.info.designpatternslab2024.persistence.BooksRepository;

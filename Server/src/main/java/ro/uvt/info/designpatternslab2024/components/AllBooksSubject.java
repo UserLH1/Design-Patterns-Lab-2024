@@ -1,9 +1,11 @@
-package ro.uvt.info.designpatternslab2024.observer;
+package ro.uvt.info.designpatternslab2024.components;
 
 import lombok.Getter;
 import lombok.Setter;
 import ro.uvt.info.designpatternslab2024.models.Book;
 import org.springframework.stereotype.Component;
+import ro.uvt.info.designpatternslab2024.observer.Observer;
+import ro.uvt.info.designpatternslab2024.observer.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
