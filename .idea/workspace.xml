@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdebeb15-0818-4a8e-bc2f-ad560d9c0f82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/BookDetailsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/BooksPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/books-app/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/commands/CreateBookCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/commands/DeleteBookCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/commands/UpdateBookCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/controllers/BooksController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/controllers/BooksSseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/filters/RequestLoggingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/ConcreteElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Paragraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Section.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/TableOfContents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/observer/AllBooksSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/observer/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/observer/SseObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/observer/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/persistence/AuthorsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/persistence/BooksRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/persistence/CrudRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/services/BooksService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/services/LoggingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/services/ParagraphAlignmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/services/ParagraphAlignmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Server/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Server/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Server/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Server/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Server/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/models/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Paragraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Section.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/bookmodel/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/chaincommand/commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/chaincommand/controllers/BooksController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/chaincommand/filters/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/filters/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/chaincommand/filters/RequestLoggingFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/dependencyInjection/components/ClientComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/services/ClientComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/dependencyInjection/components/SingletonComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/components/SingletonComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/dependencyInjection/components/TransientComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/components/TransientComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/dependencyInjection/controllers/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/services/BooksService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategy/AlignCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategy/AlignLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignLeft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategy/AlignRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/uvt/info/designpatternslab2024/strategy/AlignStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ro/uvt/info/designpatternslab2024/strategies/AlignStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/test/java/ro/uvt/info/designpatternslab2024/DesignPatternsLab2024ApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oVntAzVmQ6qaVdrbmJNkKhB64G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build SP.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DesignPatternsLab2024Application.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "Merging main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Horatiu/Faculta/III/Design Patterns/Server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SP" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesignPatternsLab2024Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ro.uvt.info.designpatternslab2024.DesignPatternsLab2024Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdebeb15-0818-4a8e-bc2f-ad560d9c0f82" name="Changes" comment="" />
+      <created>1730963823090</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730963823090</updated>
+      <workItem from="1730963824159" duration="1216000" />
+      <workItem from="1730965051059" duration="3764000" />
+      <workItem from="1732094911885" duration="7000" />
+      <workItem from="1732194242088" duration="10000" />
+      <workItem from="1732254837949" duration="5561000" />
+      <workItem from="1732694038788" duration="3000" />
+      <workItem from="1736405518940" duration="4000" />
+      <workItem from="1737100682243" duration="5933000" />
+      <workItem from="1737193383980" duration="689000" />
+      <workItem from="1737194108625" duration="14005000" />
+      <workItem from="1737213381660" duration="5859000" />
+      <workItem from="1737225765800" duration="5457000" />
+      <workItem from="1737355752840" duration="2351000" />
+      <workItem from="1737359094875" duration="5075000" />
+      <workItem from="1737364185048" duration="2414000" />
+      <workItem from="1737367140763" duration="23000" />
+      <workItem from="1737367380008" duration="34000" />
+      <workItem from="1737367423369" duration="52000" />
+      <workItem from="1737367484447" duration="124000" />
+      <workItem from="1737367625941" duration="223000" />
+      <workItem from="1737393205060" duration="57000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
