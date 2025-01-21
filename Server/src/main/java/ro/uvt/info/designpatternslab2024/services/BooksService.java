@@ -37,17 +37,17 @@ public class BooksService {
     public void addBook(Book book) {
         System.out.println("Adding book: " + book.getTitle());
         // Salvează autorii
-        for (Author author : book.getAuthors()) {
-            if (author.getId() == null || !authorsRepository.existsById(author.getId())) {
-                authorsRepository.save(author);
-            }
-        }
-
-        // Persistă secțiunile și subsecțiunile recursiv
-        for (Section section : book.getSections()) {
-            System.out.println("Persisting section: " + section.getTitle());
-            persistSectionRecursively(section);
-        }
+//        for (Author author : book.getAuthors()) {
+//            if (author.getId() == null || !authorsRepository.existsById(author.getId())) {
+//                authorsRepository.save(author);
+//            }
+//        }
+//
+//        // Persistă secțiunile și subsecțiunile recursiv
+//        for (Section section : book.getSections()) {
+//            System.out.println("Persisting section: " + section.getTitle());
+//            persistSectionRecursively(section);
+//        }
 
         // Salvează cartea
         bookAdapter.save(book);

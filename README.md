@@ -2,7 +2,7 @@
 📚 Design Patterns Lab 2024
 =================================
 
-Welcome to **Design Patterns Lab 2024**, a Spring Boot-based application built to demonstrate the implementation of various software design patterns and architectural principles. This project is not just about coding but about understanding the concepts behind reusable, efficient, and scalable software design.
+Welcome to **Design Patterns Lab 2024**, a Spring Boot-based application built at the Design Pattern Laboratory at University to demonstrate the implementation of various software design patterns and architectural principles. This project is not just about coding but about understanding the concepts behind reusable, efficient, and scalable software design.
 
 🚀 About the Project
 ---------------------------------
@@ -36,6 +36,7 @@ Implemented Design Patterns:
 
 📂 Folder Structure
 ---------------------------------
+```bash
 src/
 ├── main/
 │   ├── java/ro/uvt/info/designpatternslab2024/
@@ -45,10 +46,13 @@ src/
 │   │   ├── observer/            # Observer pattern implementation
 │   │   ├── services/            # Business logic services
 │   │   └── persistence/         # Repositories for database interaction
+│   ├── frontend/                # React frontend code
+│   │   ├── public/              # Public assets
+│   │   └── src/                 # React components and logic
 │   └── resources/
 │       ├── application.properties # App configuration
-│       └── data.sql              # Initial database seed data
 
+```
 ⚙️ Setup and Installation
 ---------------------------------
 Follow these steps to get started with the project:
@@ -72,12 +76,30 @@ spring.jpa.hibernate.ddl-auto=update
 ### 3. Build and Run the Application
 Use Gradle to build and run the application:
 ```bash
+./gradlew
 ```
+
 ### 4. Open the Application
-API Documentation: Access Swagger at http://localhost:8080/swagger-ui.html
+API : http://localhost:8080/books
 H2 Console: Visit http://localhost:8080/h2-console for in-memory database management.
+
+### 5. Run the Frontend
+Navigate to the `frontend` directory and start the React application:
+```bash
+cd src/frontend
+npm install
+npm start
+```
+Frontend: Visit http://localhost:3000 to view the React application.
+
 ✨ Enjoy exploring design patterns with this project!
 
-👨‍💻 Contributing Contributions are welcome! Feel free to fork this repository and submit pull requests.
+👨‍💻 Contributing
+---------------------------------
+Contributions are welcome! Feel free to fork this repository and submit pull requests.
 
-📄 License This project is licensed under the MIT License. See the LICENSE file for details.
+📄 License
+---------------------------------
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+

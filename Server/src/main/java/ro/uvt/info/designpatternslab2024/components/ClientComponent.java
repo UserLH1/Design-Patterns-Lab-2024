@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatternslab2024.services;
+package ro.uvt.info.designpatternslab2024.components;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ro.uvt.info.designpatternslab2024.components.SingletonComponent;

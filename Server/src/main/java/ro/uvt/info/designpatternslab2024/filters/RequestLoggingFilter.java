@@ -24,7 +24,7 @@ public class RequestLoggingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         loggingService.logRequest(request);
-        chain.doFilter(request, response); // Continuă procesarea cererii
+        chain.doFilter(request, response); 
         loggingService.logResponse(response);
     }
 }
